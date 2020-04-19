@@ -5,7 +5,7 @@
 
    <script type="text/javascript">
      $(document).ready(function(){
-         $('#carga').click(function(event){
+        
           var btn = $('#carga').val();
           $.post('ServeleteControler',{
 
@@ -26,10 +26,9 @@
 
             `
 
-
            }
 
-          });
+         
 
          });
      
@@ -38,7 +37,7 @@
    
 
 <body>
-<h2>Agregar Culos</h2>
+<h2>Agregar Datos</h2>
 <table align="center">
 	
    <thead>
