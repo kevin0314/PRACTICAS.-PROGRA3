@@ -10,6 +10,7 @@
 
 </head>
 <body>
+<form action="ServeleteControler" >
 
 <table align="center">
 	
@@ -33,8 +34,8 @@
    </thead>
 
 </table>
-   				  <input type="text" name="btn" value="GUARDAR" class="btn btn-info">
+   				  <input type="submit" name="btn" value="GUARDAR" class="btn btn-info">
        
-   				
+  </form> 				
 </body>
 </html>

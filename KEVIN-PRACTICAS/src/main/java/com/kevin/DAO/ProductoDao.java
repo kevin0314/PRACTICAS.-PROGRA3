@@ -11,6 +11,7 @@ import com.mysql.fabric.xmlrpc.base.Array;
 public class ProductoDao {
 	
 	public List<Productospv> productoLista(){
+		Productospv pr = new Productospv();
 		List<Productospv> listapr = new ArrayList<>();
 		EntityManager em;
 		EntityManagerFactory emf;
@@ -34,5 +35,17 @@ public class ProductoDao {
 		return listapr;
 		
 	}
+	
+	public void agregarDatos(Productospv pr) {
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf= Persistence.createEntityManagerFactory("KEVIN-PRACTICAS");
+		em = emf.createEntityManager();
+		em.getTransaction().begin();
+    	em.persist(pr);
+		em.flush();
+		em.getTransaction().commit();
+	}
+	
 
 }
