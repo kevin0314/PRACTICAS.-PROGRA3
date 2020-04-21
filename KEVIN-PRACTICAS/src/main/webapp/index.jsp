@@ -23,8 +23,8 @@
                <td>${item.cantidadProducto}</td>
                <td>${item.totalProducto}</td>
                 <td>
-                <a href="" class="btn btn-Warning">Eliminar</a> 
-                <a href="" class="btn btn-Danger">Editar</a>
+                <a href="ServeleteControler?btn=ELIMINAR&Id=${item.id}" class="btn btn-Warning">Eliminar</a> 
+                <a href="funciones.jsp?idBus=${item.id}&Npr=${item.nombreProducto}&PrecioPr=${item.precioProducto}&CantidadPr=${item.cantidadProducto}&TotalPr=${item.totalProducto}" class="btn btn-Danger">Editar</a>
                 </td>
               </tr>
 

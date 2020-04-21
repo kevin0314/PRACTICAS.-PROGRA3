@@ -47,5 +47,33 @@ public class ProductoDao {
 		em.getTransaction().commit();
 	}
 	
+	public void actualizarDatos(Productospv pr) {
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf= Persistence.createEntityManagerFactory("KEVIN-PRACTICAS");
+		em = emf.createEntityManager();
+		pr.getId();
+		pr.getNombreProducto();
+		pr.getPrecioProducto();
+		pr.getCantidadProducto();
+		pr.getTotalProducto();
+		em.getTransaction().begin();
+    	em.merge(pr);
+    	em.flush();
+		em.getTransaction().commit();
+	}
+	
+	public void eliminarDatos(Productospv pr) {
+		EntityManager em;
+		EntityManagerFactory emf;
+		emf= Persistence.createEntityManagerFactory("KEVIN-PRACTICAS");
+		em = emf.createEntityManager();
+		pr = em.getReference(Productospv.class, pr.getId());
+    	em.getTransaction().begin();
+		em.remove(pr);
+		em.flush();
+		em.getTransaction().commit();
+	}
+	
 
 }

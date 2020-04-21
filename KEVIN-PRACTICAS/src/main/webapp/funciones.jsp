@@ -9,6 +9,23 @@
 <title>Funciones</title>
 
 </head>
+<%
+String idBus = request.getParameter("idBus");
+String nombre = request.getParameter("Npr");
+String precio = request.getParameter("PrecioPr");
+String cantidad = request.getParameter("CantidadPr");
+String total = request.getParameter("TotalPr");
+
+%>
+<%
+if(idBus==null){
+	idBus="";
+	nombre="";
+	precio="";
+	cantidad="";
+	total="";
+}
+%>
 <body>
 <form action="ServeleteControler" >
 
@@ -19,11 +36,11 @@
    		<tr>
    		<td>
    			
-   				<p>Id</p><input type="text" name="Id">
-   				<p>Nombre producto</p><input type="text" name="Nproductos">
-   				<p>Precio producto</p><input type="text" name="Pproductos">
-   				<p>Cantidad de producto</p><input type="text" name="Cproductos">
-   				<p>Total de producto</p><input type="text" name="Tproductos">
+   				<p>Id</p><input type="text" name="Id" value="<%=idBus %>">
+   				<p>Nombre producto</p><input type="text" name="Nproductos" value="<%=nombre %>">
+   				<p>Precio producto</p><input type="text" name="Pproductos" value="<%=precio %>">
+   				<p>Cantidad de producto</p><input type="text" name="Cproductos" value="<%=cantidad %>">
+   				<p>Total de producto</p><input type="text" name="Tproductos" value="<%=total %>">
    				<br>
    				<br>
    				    </td>
@@ -34,7 +51,8 @@
    </thead>
 
 </table>
-   				  <input type="submit" name="btn" value="GUARDAR" class="btn btn-info">
+   				  <input type="submit" name="btn" value="GUARDAR" class="btn btn-info" name="btn">
+   				  <input type="submit" name="btn" value="EDITAR" class="btn btn-warning" name="btn">
        
   </form> 				
 </body>
